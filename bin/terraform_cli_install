@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+
+# running the commands in base workspace directoty to avoid unwanted files commit
+
+cd /workspace
+
 #verify if pakages are up to date and install pre-requisites packages
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
 
@@ -23,3 +28,7 @@ sudo apt update
 
 #install terraform
 sudo apt-get install terraform
+
+# once install completes switching back to terraform directory
+
+cd $PROJECT_ROOT
