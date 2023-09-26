@@ -32,3 +32,9 @@ gp env PROJECT_ROOT='/workspace/terraform-beginner-bootcamp-2023'
 ## Env file
 
 New env.example file created to show the env variable set
+
+
+
+### AWS CLI refactor
+
+Created a seperate bash script for AWS CLI install
