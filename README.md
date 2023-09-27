@@ -37,4 +37,24 @@ New env.example file created to show the env variable set
 
 ### AWS CLI refactor
 
-Created a seperate bash script for AWS CLI install
+Created a seperate bash script for AWS CLI install which will be sourced in the main gitpod.yml
+
+NEVER commit access keys in github
+
+``` sh
+
+gp env AWS_ACCESS_KEY_ID=EXAMPLEACCESSKEY
+gp env AWS_SECRET_ACCESS_KEY=EXAMPLESECRETACCESSKEY
+gp env AWS_DEFAULT_REGION=us-east-1
+
+```
+
+Once this is set it can be viewed under [user variables for gitpod ](https://gitpod.io/user/variables)
+
+Validation can be run by running the below command
+
+``` sh
+aws sts get-caller-identity
+```
+
+If it did not reflect immediately, stop and start the gitpod it should be reflected.
