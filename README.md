@@ -58,3 +58,66 @@ aws sts get-caller-identity
 ```
 
 If it did not reflect immediately, stop and start the gitpod it should be reflected.
+
+
+## Terraform basics using random provider
+
+[Terraform registry](https://registry.terraform.io/) is the one stop place to check for all the providers and the documentation.
+
+Providers are the API that are responsible for interacting with the resources 
+
+Modules are similar to templates to create resources 
+
+``
+terraform init
+``
+ command initializes the terraform directory of configuration files
+
+
+``` sh
+
+gitpod /workspace/terraform-beginner-bootcamp-2023 (main) $ terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding hashicorp/random versions matching "3.5.1"...
+- Installing hashicorp/random v3.5.1...
+- Installed hashicorp/random v3.5.1 (signed by HashiCorp)
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+
+```
+
+``
+main.tf
+
+``
+ will contain the main set of configuration for your module. 
+
+In our main.tf we are declaring the random provider in terraform and also using the module to create random bucket 
+
+
+``
+terraform plan
+``
+is the command that creates a change set to see what resources will be created based on the configuration file
+
+``
+terraform apply
+``
+is the command to create the resources that are declared by terraform plan. Once the command is executed a terraform state file is created which has the details on the resources created
+
