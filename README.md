@@ -121,3 +121,13 @@ terraform apply
 ``
 is the command to create the resources that are declared by terraform plan. Once the command is executed a terraform state file is created which has the details on the resources created
 
+
+## Creating s3 bucket
+
+Tried to create an s3 bucket with random name but was facing error with invalid name used for s3 so changed to use custom name 
+
+
+`` 
+terraform destroy
+
+``
