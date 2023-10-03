@@ -131,3 +131,36 @@ Tried to create an s3 bucket with random name but was facing error with invalid 
 terraform destroy
 
 ``
+
+## Terraform cloud login
+
+Create a login for terraform cloud and create a workspace and project. Once it is done we need to migrate our state file to terraform cloud. We will add the below code block in our terraform config file to have the integration done
+
+
+```
+terraform {
+  cloud {
+    organization = "yoga-terraform-beginner-bootcamp"
+
+    workspaces {
+      name = "terra-house-1"
+    }
+  }
+}
+
+```
+
+Once this code is added we need to re initialize terraform by running 
+
+```
+terraform init
+```
+and we will be asked to do the terraform login
+
+```
+terraform login
+```
+
+follow the prompts and generate the token and paste you will be logged in to terraform cloud. 
+
+Now the state file is synced to the terraform cloud
